@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EstoqueExpress</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; object-src 'none';">
+    <title>Gerenciador de Contas</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap-icons.min.css">
+    <script defer src="./js/script.js"></script> <!-- Adicione seu script de renderização -->
 </head>
 <body>
-    <div class="container-fluid p-0">
+    <nav class="container-fluid p-0">
         <div class="d-flex justify-content-between align-items-center bg-dark text-white p-2">
             <span class="ms-2">EstoqueExpress</span>
             <div>
@@ -24,10 +26,24 @@
                 </button>
             </div>
         </div>
+    </nav>
+    <div class="container mt-4">
+        <h1>Gerenciador de Contas</h1>
+        <form id="itemForm">
+            <div class="mb-3">
+                <label for="itemName" class="form-label">Nome do Item</label>
+                <input type="text" id="itemName" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="expiryDate" class="form-label">Data de Validade</label>
+                <input type="date" id="expiryDate" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar Item</button>
+        </form>
+        <hr>
+        <h2>Itens Próximos do Vencimento</h2>
+        <ul id="itemList" class="list-group"></ul>
     </div>
-    <main class="container-fluid p-0">
-
-    </main>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,13 +1,15 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-require('electron-reload')(__dirname); // Adicione isso
+const path = require('path');
+require('electron-reload')(__dirname);
 
 function createWindow () {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        frame: false, // Remove a barra de menu
+        frame: false,
+        icon: path.join(__dirname, 'assets/icon.png'),
         webPreferences: {
-            preload: __dirname + '/preload.js', // Usar um script de preload
+            preload: path.join(__dirname, 'app_Preload.js'),
             contextIsolation: true, // Habilita o isolamento de contexto
             enableRemoteModule: false, // Desabilitar o módulo remote
         }

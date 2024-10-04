@@ -1,12 +1,12 @@
 {
-  "name": "backdoor",
+  "name": "appelectron",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "start": "electron ."
   },
   "keywords": [],
-  "author": "",
+  "author": "André",
   "license": "ISC",
   "description": "",
   "devDependencies": {
